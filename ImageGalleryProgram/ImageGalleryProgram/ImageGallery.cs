@@ -8,16 +8,11 @@ namespace ImageGalleryProgram
 {
     public class ImageGallery
     {
-        IShareImage _share;
-        public ImageGallery(IShareImage share)
+        public void Send(IShareImage send)
         {
-            this._share = share;
-        }
-
-        public void Share()
-        {
-            _share.Send();
-
+            send.Send();
         }
     }
 }
+  
+

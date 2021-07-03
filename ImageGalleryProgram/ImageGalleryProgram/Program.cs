@@ -11,14 +11,13 @@ namespace ImageGalleryProgram
         static void Main(string[] args)
         {
             Gmail gmail = new Gmail();
-            ImageGallery imageGallery = new ImageGallery(gmail);
-            imageGallery.Share();
+            WhatsApp whatsApp = new WhatsApp();
+            Bluetooth bluetooth = new Bluetooth();
 
-            ImageGallery whatsApp = new ImageGallery(new WhatsApp());
-            whatsApp.Share();
-
-            ImageGallery bluetooth = new ImageGallery(new Bluetooth());
-            bluetooth.Share();
+            ImageGallery imageGallery = new ImageGallery();
+            imageGallery.Send(gmail);
+            imageGallery.Send(whatsApp);
+            imageGallery.Send(bluetooth);
         }
     }
 }
